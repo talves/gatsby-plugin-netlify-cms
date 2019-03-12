@@ -2,6 +2,8 @@
 
 **A Gatsby plugin to setup Netlify CMS without having to make a static route.**
 
+**_Note:_** This version is using the beta version of `@talves/netlify-cms-react` until a full release for 'umd' builds are create using PR #2141 in the `netlify/netlify-cms` repository libraries.
+
 ## Overview
 
 Automatically generates an `admin/index.html` with a default Netlify CMS implementation.
