@@ -1,0 +1,22 @@
+language: node_js
+
+services:
+  - docker
+
+node_js:
+  - 11
+
+cache: yarn
+
+branches:
+  only:
+    - master
+
+before_script:
+  - yarn build
+
+jobs:
+  include:
+    - stage: release
+      script:
+        - yarn semantic-release

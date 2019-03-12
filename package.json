@@ -1,0 +1,63 @@
+{
+  "name": "@talves/gatsby-plugin-netlify-cms",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "yarn clean",
+    "build": "babel src --out-dir .",
+    "clean": "rimraf gatsby-browser.js gatsby-node.js index.js cms*.js",
+    "semantic-release": "semantic-release",
+    "commit": "git cz"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "netlify-cms"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "gatsby-*.js",
+    "cms*.js",
+    "index.js",
+    "README.md"
+  ],
+  "dependencies": {
+    "@talves/netlify-cms-react": "^2.6.0-beta.0",
+    "lodash": "^4.17.10",
+    "mini-css-extract-plugin": "^0.4.1",
+    "netlify-identity-widget": "^1.4.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-gatsby-package": "^0.1.4",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "5.15.0",
+    "eslint-plugin-react": "^7.12.4",
+    "html-webpack-exclude-assets-plugin": "^0.0.7",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.3",
+    "webpack": "4.29.6"
+  },
+  "peerDependencies": {
+    "gatsby": ">=2",
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talves/gatsby-plugin-netlify-cms.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
