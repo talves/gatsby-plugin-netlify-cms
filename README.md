@@ -1,5 +1,8 @@
 # Gatsby Plugin for Netlify CMS
 
+![npm (scoped)](https://img.shields.io/npm/v/@talves/gatsby-plugin-netlify-cms.svg?style=flat-square)
+![Travis (.org)](https://img.shields.io/travis/talves/gatsby-plugin-netlify-cms.svg?style=flat-square)
+
 **A Gatsby plugin to setup Netlify CMS without having to make a static route.**
 
 **_Note:_** This version is using the beta version of `@talves/netlify-cms-react` until a full release for 'umd' builds are create using PR #2141 in the `netlify/netlify-cms` repository libraries.
