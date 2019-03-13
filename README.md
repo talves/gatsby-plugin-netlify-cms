@@ -1,7 +1,7 @@
 # Gatsby Plugin for Netlify CMS
 
-![npm (scoped)](https://img.shields.io/npm/v/@talves/gatsby-plugin-netlify-cms.svg?style=flat-square)
-![Travis (.org)](https://img.shields.io/travis/talves/gatsby-plugin-netlify-cms.svg?style=flat-square)
+![[npm](https://img.shields.io/npm/v/@talves/gatsby-plugin-netlify-cms.svg?style=flat-square)][1]
+![[Travis](https://img.shields.io/travis/talves/gatsby-plugin-netlify-cms.svg?style=flat-square)][1]
 
 **A Gatsby plugin to setup Netlify CMS without having to make a static route.**
 
@@ -188,3 +188,6 @@ plugins: [
   },
 ]
 ```
+
+[1]: https://www.npmjs.com/package/@talves/gatsby-plugin-netlify-cms
+[2]: https://github.com/talves/gatsby-plugin-netlify-cms
