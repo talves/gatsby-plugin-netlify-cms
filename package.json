@@ -25,17 +25,10 @@
     "README.md"
   ],
   "dependencies": {
-    "@talves/netlify-cms-backend-bitbucket": "beta",
-    "@talves/netlify-cms-backend-git-gateway": "beta",
-    "@talves/netlify-cms-backend-github": "beta",
-    "@talves/netlify-cms-backend-gitlab": "beta",
-    "@talves/netlify-cms-backend-test": "beta",
     "@talves/netlify-cms-core": "beta",
     "@talves/netlify-cms-editor-component-image": "beta",
     "@talves/netlify-cms-lib-auth": "beta",
     "@talves/netlify-cms-lib-util": "beta",
-    "@talves/netlify-cms-media-library-cloudinary": "beta",
-    "@talves/netlify-cms-media-library-uploadcare": "beta",
     "@talves/netlify-cms-ui-default": "beta",
     "@talves/netlify-cms-widget-boolean": "beta",
     "@talves/netlify-cms-widget-date": "beta",

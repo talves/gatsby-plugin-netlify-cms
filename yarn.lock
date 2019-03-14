@@ -925,46 +925,6 @@
     into-stream "^4.0.0"
     lodash "^4.17.4"
 
-"@talves/netlify-cms-backend-bitbucket@beta":
-  version "2.1.2-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-backend-bitbucket/-/netlify-cms-backend-bitbucket-2.1.2-beta.6.tgz#7906bbfb07c58849185aa7dcca0a2314c8e5b4d2"
-  integrity sha512-izkJAI3XKtNw9B2tuVdd0g25X7RtBqZmkbc5u4tNEuU7vKp/3EhfplnIOFl2zTLTWRdkjtdRIxikhc8zJn3FVg==
-  dependencies:
-    js-base64 "^2.4.8"
-    semaphore "^1.1.0"
-
-"@talves/netlify-cms-backend-git-gateway@beta":
-  version "2.2.3-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-backend-git-gateway/-/netlify-cms-backend-git-gateway-2.2.3-beta.6.tgz#788f3c6a2d3576b2c2be9afab9b951a538c411d8"
-  integrity sha512-JfmjMbHhzJbghNfm5kzpeKWuifpzSJ7MChuap/968r+TYagL27IkzsNOoVCVrkRlC87OfsORGOWVMgK6Iv7TAQ==
-  dependencies:
-    gotrue-js "^0.9.22"
-    ini "^1.3.5"
-    jwt-decode "^2.2.0"
-    minimatch "^3.0.4"
-
-"@talves/netlify-cms-backend-github@beta":
-  version "2.2.2-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-backend-github/-/netlify-cms-backend-github-2.2.2-beta.6.tgz#35c5d7c26ba7e05844dd6b5cb148c28d601f5404"
-  integrity sha512-5aAcg/LbPQXbNss/43jVEBdkOrQp2JFd5voWmyie0ob4x3gvvOzax/3VnAnumOk05y5lWwUMVobkQlD2Oo1vgA==
-  dependencies:
-    common-tags "^1.8.0"
-    js-base64 "^2.4.8"
-    semaphore "^1.1.0"
-
-"@talves/netlify-cms-backend-gitlab@beta":
-  version "2.1.3-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-backend-gitlab/-/netlify-cms-backend-gitlab-2.1.3-beta.6.tgz#c5865ccb3291f1b87d9d579d29201513ebd7647e"
-  integrity sha512-7L+8SKiHuDTzm0DK08G5if9foTENdSKTAzeKwv86hGH/FMC9Fw/wptDnAWboDaLZWjA14HJwHuQ73CvOsKaPfg==
-  dependencies:
-    js-base64 "^2.4.8"
-    semaphore "^1.1.0"
-
-"@talves/netlify-cms-backend-test@beta":
-  version "2.0.6-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-backend-test/-/netlify-cms-backend-test-2.0.6-beta.6.tgz#50aa26f8fa31ddf62572e372846f5be8faf20dc6"
-  integrity sha512-Yso5mK7KJuUbp5Q1i5Te50DM8f2HYD0R0/PGgSXFarxf2wPDu0lD6afWdQaaJ/vNAYWSgaceYBu1Vov9s4pnKw==
-
 "@talves/netlify-cms-core@beta":
   version "2.8.0-beta.6"
   resolved "https://registry.yarnpkg.com/@talves/netlify-cms-core/-/netlify-cms-core-2.8.0-beta.6.tgz#026ed12435b880ee6d3c618127b66e024e9b6b45"
@@ -1027,19 +987,6 @@
   dependencies:
     js-sha256 "^0.9.0"
     localforage "^1.4.2"
-
-"@talves/netlify-cms-media-library-cloudinary@beta":
-  version "1.1.1-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-media-library-cloudinary/-/netlify-cms-media-library-cloudinary-1.1.1-beta.6.tgz#d50aa833574cd25a470b62904d5e826f36b34ac4"
-  integrity sha512-DVmvBdtn6abr5TZ6DrkgyEddc7YYqN0DeSsIFuqBN3p8msi7/N+8qqJPzzrYkRBklDeq2HQsDLQgAwJZJnljcA==
-
-"@talves/netlify-cms-media-library-uploadcare@beta":
-  version "0.3.4-beta.6"
-  resolved "https://registry.yarnpkg.com/@talves/netlify-cms-media-library-uploadcare/-/netlify-cms-media-library-uploadcare-0.3.4-beta.6.tgz#ed5816c2dcd1b8f97293ec3e345aeefd8502fd48"
-  integrity sha512-j1/X0caumO7h5u3bZvMCwtRVorAfzvcKKzZdY9jbYli562JttuIwpbWUiBvcL4ct9xIFBDsDg+a4Ha8RtnSOBw==
-  dependencies:
-    uploadcare-widget "^3.6.2"
-    uploadcare-widget-tab-effects "^1.3.0"
 
 "@talves/netlify-cms-ui-default@beta":
   version "2.4.0-beta.6"
@@ -2781,7 +2728,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -3945,7 +3892,7 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-gotrue-js@^0.9.15, gotrue-js@^0.9.22:
+gotrue-js@^0.9.15:
   version "0.9.24"
   resolved "https://registry.yarnpkg.com/gotrue-js/-/gotrue-js-0.9.24.tgz#cff20efa170f1670ec7268242604477ba0c4e0d3"
   integrity sha512-lIPNjCf9246Qk71MzV6wSW4EC3F2ejPXFn8/3IQoDdB3mpfGTqBMZFXEknvXE+sr7XpA2z3EhV8QSPorH+UAFg==
@@ -4385,7 +4332,7 @@ import-lazy@^2.1.0:
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
   integrity sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM=
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -4881,12 +4828,7 @@ java-properties@^0.2.9:
   resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-0.2.10.tgz#2551560c25fa1ad94d998218178f233ad9b18f60"
   integrity sha512-CpKJh9VRNhS+XqZtg1UMejETGEiqwCGDC/uwPEEQwc2nfdbSm73SIE29TplG2gLYuBOOTNDqxzG6A9NtEPLt0w==
 
-jquery@>=1.10.2:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
-
-js-base64@^2.1.9, js-base64@^2.4.8:
+js-base64@^2.1.9:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
@@ -5002,7 +4944,7 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
-jwt-decode@^2.1.0, jwt-decode@^2.2.0:
+jwt-decode@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
   integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
@@ -5196,11 +5138,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -5209,32 +5146,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -5275,11 +5190,6 @@ lodash.map@^4.5.1:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
   integrity sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.set@^4.3.2:
   version "4.3.2"
@@ -7459,7 +7369,7 @@ readable-stream@~1.1.10:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   integrity sha1-n6+jfShr5dksuuve4DDcm19AZ0c=
@@ -7982,7 +7892,7 @@ semantic-release@^15.13.3:
     signale "^1.2.1"
     yargs "^12.0.0"
 
-semaphore@^1.0.5, semaphore@^1.1.0:
+semaphore@^1.0.5:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/semaphore/-/semaphore-1.1.0.tgz#aaad8b86b20fe8e9b32b16dc2ee682a8cd26a8aa"
   integrity sha512-O4OZEaNtkMd/K0i6js9SL+gqy0ZCBMgUvlSqHKi4IBdjhe7wB8pwztUk1BbZ1fmrvpwFrPbHzqd2w5pTcJH6LA==
@@ -9151,18 +9061,6 @@ update-notifier@^2.3.0, update-notifier@^2.5.0:
     latest-version "^3.0.0"
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
-
-uploadcare-widget-tab-effects@^1.3.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/uploadcare-widget-tab-effects/-/uploadcare-widget-tab-effects-1.4.0.tgz#e3ecbb74ca32cc8f4832671cc54f50dea5ac23df"
-  integrity sha512-QMbXfT8pVwEjrMtaURNJhry9uIzMtCL7+/aVX5McZTa5oHehSJCaqHF2Qt5NsDOYyk87bSPPvRtok2MktRgTXg==
-
-uploadcare-widget@^3.6.2:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/uploadcare-widget/-/uploadcare-widget-3.7.0.tgz#d337c2f9b03f0a95a14a44a369feda9a8a29b622"
-  integrity sha512-Ti0gbnLr8dcHAMGXG8F+EqKXKjl41iDiM/sAiNJqz4+DwKmlkd3HB+MNGxRfDSmzVE7R+Yt6O/kYH3lyEyTW3Q==
-  dependencies:
-    jquery ">=1.10.2"
 
 upper-case@^1.1.1:
   version "1.1.3"

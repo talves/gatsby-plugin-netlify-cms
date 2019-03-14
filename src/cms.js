@@ -1,10 +1,10 @@
 import * as CMS from '@talves/netlify-cms-core';
 /** Backends */
-import { Control as NetlifyCmsBackendGithub } from '@talves/netlify-cms-backend-github';
-import { Control as NetlifyCmsBackendGitlab } from '@talves/netlify-cms-backend-gitlab';
-import { Control as NetlifyCmsBackendGitGateway } from '@talves/netlify-cms-backend-git-gateway';
-import { Control as NetlifyCmsBackendBitbucket } from '@talves/netlify-cms-backend-bitbucket';
-import { Control as NetlifyCmsBackendTest } from '@talves/netlify-cms-backend-test';
+// import { Control as NetlifyCmsBackendGithub } from '@talves/netlify-cms-backend-github';
+// import { Control as NetlifyCmsBackendGitlab } from '@talves/netlify-cms-backend-gitlab';
+// import { Control as NetlifyCmsBackendGitGateway } from '@talves/netlify-cms-backend-git-gateway';
+// import { Control as NetlifyCmsBackendBitbucket } from '@talves/netlify-cms-backend-bitbucket';
+// import { Control as NetlifyCmsBackendTest } from '@talves/netlify-cms-backend-test';
 /** Widgets */
 import * as NetlifyCmsWidgetString from '@talves/netlify-cms-widget-string';
 import * as NetlifyCmsWidgetNumber from '@talves/netlify-cms-widget-number';
@@ -21,17 +21,17 @@ import * as NetlifyCmsWidgetRelation from '@talves/netlify-cms-widget-relation';
 import * as NetlifyCmsWidgetBoolean from '@talves/netlify-cms-widget-boolean';
 import * as NetlifyCmsWidgetMap from '@talves/netlify-cms-widget-map';
 /** MediaLibraries */
-import uploadcare from '@talves/netlify-cms-media-library-uploadcare';
-import cloudinary from '@talves/netlify-cms-media-library-cloudinary';
+// import uploadcare from '@talves/netlify-cms-media-library-uploadcare';
+// import cloudinary from '@talves/netlify-cms-media-library-cloudinary';
 /** EditorComponents */
 import image from '@talves/netlify-cms-editor-component-image';
 
 /** Backends */
-CMS.registerBackend('git-gateway', NetlifyCmsBackendGitGateway);
-CMS.registerBackend('github', NetlifyCmsBackendGithub);
-CMS.registerBackend('gitlab', NetlifyCmsBackendGitlab);
-CMS.registerBackend('bitbucket', NetlifyCmsBackendBitbucket);
-CMS.registerBackend('test-repo', NetlifyCmsBackendTest);
+// CMS.registerBackend('git-gateway', NetlifyCmsBackendGitGateway);
+// CMS.registerBackend('github', NetlifyCmsBackendGithub);
+// CMS.registerBackend('gitlab', NetlifyCmsBackendGitlab);
+// CMS.registerBackend('bitbucket', NetlifyCmsBackendBitbucket);
+// CMS.registerBackend('test-repo', NetlifyCmsBackendTest);
 /** Widgets */
 CMS.registerWidget('string', NetlifyCmsWidgetString.Control, NetlifyCmsWidgetString.Preview);
 CMS.registerWidget('number', NetlifyCmsWidgetNumber.Control, NetlifyCmsWidgetNumber.Preview);
@@ -48,8 +48,8 @@ CMS.registerWidget('relation', NetlifyCmsWidgetRelation.Control, NetlifyCmsWidge
 CMS.registerWidget('boolean', NetlifyCmsWidgetBoolean.Control);
 CMS.registerWidget('map', NetlifyCmsWidgetMap.Control, NetlifyCmsWidgetMap.Preview);
 /** MediaLibraries */
-CMS.registerMediaLibrary(uploadcare);
-CMS.registerMediaLibrary(cloudinary);
+// CMS.registerMediaLibrary(uploadcare);
+// CMS.registerMediaLibrary(cloudinary);
 /** EditorComponents */
 CMS.registerEditorComponent(image);
 
