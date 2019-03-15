@@ -5,7 +5,7 @@
 
 **A Gatsby plugin to setup Netlify CMS without having to make a static route.**
 
-**_Note:_** This version is using the beta version of `@talves/netlify-cms-react` until a full release for 'umd' builds are accepted using PR #2141 in the `netlify/netlify-cms` repository libraries.
+**_Note:_** This version is using the beta version of `@talves/netlify-cms-*` until a full release for 'umd' builds are accepted using [PR #2141][3] in the `netlify/netlify-cms` repository libraries.
 
 ## Overview
 
@@ -191,3 +191,4 @@ plugins: [
 
 [1]: https://www.npmjs.com/package/@talves/gatsby-plugin-netlify-cms
 [2]: https://github.com/talves/gatsby-plugin-netlify-cms
+[3]: https://github.com/netlify/netlify-cms/pull/2141
