@@ -2,3 +2,4 @@ node_modules
 /gatsby-*.js
 /index.js
 /cms*.js
+*.log
