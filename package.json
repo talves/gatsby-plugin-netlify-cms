@@ -1,13 +1,14 @@
 {
   "name": "@talves/gatsby-plugin-netlify-cms",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "A plugin to use NetlifyCMS with React as peer dep",
+  "author": "Tony Alves <tony@3alves.com>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "yarn clean",
     "build": "babel src --out-dir .",
-    "clean": "rimraf gatsby-browser.js gatsby-node.js index.js cms*.js",
+    "clean": "rimraf gatsby-*.js cms-*.js",
     "semantic-release": "semantic-release",
     "commit": "git cz"
   },
@@ -16,7 +17,6 @@
     "gatsby-plugin",
     "netlify-cms"
   ],
-  "author": "",
   "license": "MIT",
   "files": [
     "gatsby-*.js",
@@ -25,16 +25,16 @@
     "README.md"
   ],
   "dependencies": {
-    "friendly-errors-webpack-plugin": "1.7.0",
+    "@pieh/friendly-errors-webpack-plugin": "1.7.0-chalk-2",
     "html-webpack-exclude-assets-plugin": "^0.0.7",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.1"
+    "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.1",
+    "netlify-identity-widget": "^1.4.11"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
     "babel-preset-gatsby-package": "^0.1.4",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
@@ -45,41 +45,17 @@
     "webpack": "4.29.6"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.9",
-    "@talves/netlify-cms-core": "^2.6.2-beta.1",
-    "@talves/netlify-cms-editor-component-image": "^2.6.2-beta.1",
-    "@talves/netlify-cms-lib-auth": "^2.6.2-beta.1",
-    "@talves/netlify-cms-lib-util": "^2.6.2-beta.1",
-    "@talves/netlify-cms-ui-default": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-boolean": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-date": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-datetime": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-file": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-image": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-list": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-map": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-markdown": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-number": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-object": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-relation": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-select": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-string": "^2.6.2-beta.1",
-    "@talves/netlify-cms-widget-text": "^2.6.2-beta.1",
+    "@talves/netlify-cms": "2.8.0-beta.0",
     "gatsby": ">=2",
-    "immutable": "^3.7.6",
-    "lodash": "^4.17.11",
-    "moment": "^2.24.0",
-    "netlify-identity-widget": "^1.4.11",
-    "prop-types": "^15.7.2",
-    "react-immutable-proptypes": "^2.1.0",
-    "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "uuid": "3.3.2"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/talves/gatsby-plugin-netlify-cms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/talves/gatsby-plugin-netlify-cms/issues"
   },
   "config": {
     "commitizen": {
