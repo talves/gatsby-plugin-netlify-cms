@@ -152,19 +152,24 @@ exports.onCreateWebpackConfig = (
         }),
       ].filter(p => p),
 
-      /**
-       * Remove mode and common chunks style optimizations from Gatsby's default
-       * config, they cause issues for our pre-bundled code.
-       */
-      mode: `none`,
-      optimization: {},
+      mode: stage === `develop` ? `development` : `production`,
       devtool: stage === `develop` ? `cheap-module-source-map` : `source-map`,
     }
 
     if (stage === `develop`) {
       webpack(config).watch({}, () => {})
     } else {
-      webpack(config).run()
+      return new Promise((resolve, reject) => {
+        webpack(config).run((err, stats) => {
+          if (err) {
+            console.log('CMS build error!', err)
+            reject(err)
+          } else {
+            console.log('CMS build success!')
+            resolve(stats)
+          }
+        })
+      })
     }
   }
 }
