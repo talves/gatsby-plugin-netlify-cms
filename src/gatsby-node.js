@@ -153,6 +153,7 @@ exports.onCreateWebpackConfig = (
       ].filter(p => p),
 
       mode: stage === `develop` ? `development` : `production`,
+      optimization: {},
       devtool: stage === `develop` ? `cheap-module-source-map` : `source-map`,
     }
 
