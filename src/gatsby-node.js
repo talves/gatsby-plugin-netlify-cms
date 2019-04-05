@@ -158,16 +158,19 @@ exports.onCreateWebpackConfig = (
     }
 
     if (stage === `develop`) {
-      webpack(config).watch({}, () => {})
+      webpack(config).watch({}, () => {});
     } else {
       return new Promise((resolve, reject) => {
         webpack(config).run((err, stats) => {
           if (err) {
-            console.log('CMS build error!', err)
-            reject(err)
+            reject(err);
           } else {
-            console.log('CMS build success!')
-            resolve(stats)
+            const errors = stats.compilation.errors || [];
+            if (errors.length > 0) {
+              reject(stats.compilation.errors);
+            } else {
+              resolve(stats);
+            }
           }
         })
       })
