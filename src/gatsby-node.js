@@ -173,5 +173,5 @@ exports.onCreateWebpackConfig = (
         })
       }
     }
-    resolve()
+    return resolve()
   })
