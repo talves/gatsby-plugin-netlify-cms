@@ -162,16 +162,10 @@ exports.onCreateWebpackConfig = (
     } else {
       return new Promise((resolve, reject) => {
         webpack(config).run((err, stats) => {
-          if (err) {
-            reject(err);
-          } else {
-            const errors = stats.compilation.errors || [];
-            if (errors.length > 0) {
-              reject(stats.compilation.errors);
-            } else {
-              resolve(stats);
-            }
-          }
+          if (err) return reject(err)
+          const errors = stats.compilation.errors || [];
+          if (errors.length > 0) return reject(stats.compilation.errors)
+          return resolve(stats)
         })
       })
     }
