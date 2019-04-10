@@ -5,7 +5,7 @@
 
 **A Gatsby plugin to setup Netlify CMS without having to make a static route.**
 
-**_Note:_** This version is using the beta version of `@talves/netlify-cms-*` until a full release for 'umd' builds are accepted using [PR #2141][3] in the `netlify/netlify-cms` repository libraries.
+**_Note:_** This version requires the use of `netlify-cms-app` as a dependency rather than `netlify-cms`. Replace `gatsby-plugin-netlify-cms` with `@talves/gatsby-plugin-netlify-cms`.
 
 ## Overview
 
