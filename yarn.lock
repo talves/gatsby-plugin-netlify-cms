@@ -6733,10 +6733,10 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-semantic-release@^15.13.20:
-  version "15.13.20"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.20.tgz#13e9130cce3ed6676fea3db93645fc927e020ac4"
-  integrity sha512-GWwv6aWjRRixPMUHNicxw/KLhnTw/x5H0taDOz2vDnCVsDfUQRRt2dUcxC+Nsg9+CH9oes1qXdbeKuq81Ys7Dg==
+semantic-release@^15.13.19:
+  version "15.13.19"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.19.tgz#d1d05b3516fb8701d81f4e6b9be42bafffef13cb"
+  integrity sha512-6eqqAmzGaJWgP5R5IkWIQK9is+cWUp/A+pwzxf/YaG1hJv1eD25klUP7Y0fedsPOxxI8eLuDUVlEs7U8SOlK0Q==
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
@@ -6754,7 +6754,7 @@ semantic-release@^15.13.20:
     git-log-parser "^1.2.0"
     hook-std "^2.0.0"
     hosted-git-info "^2.7.1"
-    lodash "^4.17.15"
+    lodash "^4.17.4"
     marked "^0.7.0"
     marked-terminal "^3.2.0"
     p-locate "^4.0.0"

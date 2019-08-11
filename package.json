@@ -47,7 +47,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "rimraf": "^2.6.3",
-    "semantic-release": "^15.13.20",
+    "semantic-release": "^15.13.19",
     "webpack": "^4.39.1"
   },
   "peerDependencies": {
