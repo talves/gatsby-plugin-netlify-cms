@@ -1,0 +1,31 @@
+on: push
+name: Build, Test, and Publish
+jobs:
+  master:
+    name: Master
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Master
+      uses: actions/bin/filter@master
+      with:
+        args: branch master
+    - name: YarnInstall
+      uses: talves/actions-yarn@master
+      with:
+        args: install
+    - name: Test
+      uses: talves/actions-yarn@master
+      with:
+        args: test
+    - name: Build
+      uses: talves/actions-yarn@master
+      with:
+        args: build
+    - name: SemanticRelease
+      uses: talves/actions-yarn@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      with:
+        args: semantic-release
