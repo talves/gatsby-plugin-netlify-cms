@@ -30,5 +30,5 @@ action "SemanticRelease" {
   needs = "Build"
   uses = "talves/actions-yarn@master"
   args = "semantic-release"
-  secrets = ["GITHUB_TOKEN", "NPM_TOKEN"]
+  secrets = ["GH_TOKEN", "NPM_TOKEN"]
 }
