@@ -98,9 +98,10 @@ exports.onCreateWebpackConfig = (
     htmlTitle = `Content Manager`,
     htmlFavicon = ``,
     manualInit = false,
+    buildCMS = true,
   }
 ) => {
-  if (![`develop`, `build-javascript`].includes(stage)) {
+  if (!buildCMS || ![`develop`, `build-javascript`].includes(stage)) {
     return Promise.resolve()
   }
   const gatsbyConfig = getConfig()

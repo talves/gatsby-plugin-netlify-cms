@@ -40,6 +40,12 @@ Netlify CMS can be configured via the plugin options below. You can learn
 about how to pass options to plugins in the [Gatsby
 docs](https://www.gatsbyjs.org/docs/plugins/#how-to-use-gatsby-plugins).
 
+### `buildCMS`
+
+(_optional_, default: `true`)
+
+Set this to `false` If you want to bypass the build of Netlify CMS. The plugin will build the cms by default to the `modulePath`, otherwise you will need to submit the built code to `static/${modulePath}` and push to your repository. This will cut down on your Gatsby build time and you would build local when you make changes that affect the CMS build. Examples are; changing preview components, making data changes to config schema, registering a new widget or updating the CMS to a new version.
+
 ### `modulePath`
 
 (_optional_, default: `undefined`)
