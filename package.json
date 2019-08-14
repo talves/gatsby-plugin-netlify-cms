@@ -1,6 +1,6 @@
 {
   "name": "@talves/gatsby-plugin-netlify-cms",
-  "version": "2.3.4",
+  "version": "0.0.0-development",
   "description": "A plugin to use NetlifyCMS with React as peer dep",
   "author": "Tony Alves <tony@3alves.com>",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "prebuild": "yarn clean",
     "clean": "rimraf gatsby-*.js cms-*.js",
     "semantic-release": "semantic-release",
-    "commit": "git cz"
+    "commit": "git-cz"
   },
   "keywords": [
     "gatsby",
