@@ -5,24 +5,26 @@ jobs:
     name: Master
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Master
-      uses: actions/bin/filter@master
-      with:
-        args: branch master
+    - name: Checkout
+      if: github.event.ref == 'refs/heads/master'
+      uses: actions/checkout@master
     - name: YarnInstall
+      if: github.event.ref == 'refs/heads/master'
       uses: talves/actions-yarn@master
       with:
         args: install
     - name: Test
+      if: github.event.ref == 'refs/heads/master'
       uses: talves/actions-yarn@master
       with:
         args: test
     - name: Build
+      if: github.event.ref == 'refs/heads/master'
       uses: talves/actions-yarn@master
       with:
         args: build
     - name: SemanticRelease
+      if: github.event.ref == 'refs/heads/master'
       uses: talves/actions-yarn@master
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
