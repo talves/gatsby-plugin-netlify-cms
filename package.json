@@ -51,7 +51,7 @@
     "webpack": "^4.39.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.0.101",
+    "gatsby": "^2.15.15",
     "netlify-cms-app": "^2.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
