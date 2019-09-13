@@ -1,11 +1,12 @@
 import path from "path"
+import fs from "fs"
 import { mapValues, isPlainObject, trim } from "lodash"
 import webpack from "webpack"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 // TODO: swap back when https://github.com/geowarin/friendly-errors-webpack-plugin/pull/86 lands
-import FriendlyErrorsPlugin from "@pieh/friendly-errors-webpack-plugin"
+import FriendlyErrorsPlugin from "friendly-errors-webpack-plugin"
 
 // Deep mapping function for plain objects and arrays. Allows any value,
 // including an object or array, to be transformed.
@@ -90,7 +91,7 @@ exports.onCreateDevServer = ({ app, store }, { publicPath = `admin` }) => {
 }
 
 exports.onCreateWebpackConfig = (
-  { store, stage, getConfig, plugins, pathPrefix, loaders },
+  { store, stage, getConfig, plugins, pathPrefix, loaders, reporter },
   {
     modulePath,
     publicPath = `admin`,
@@ -101,12 +102,26 @@ exports.onCreateWebpackConfig = (
     buildCMS = true,
   }
 ) => {
+  const developing = stage === `develop`
   if (!buildCMS || ![`develop`, `build-javascript`].includes(stage)) {
     return Promise.resolve()
   }
   const gatsbyConfig = getConfig()
   const { program } = store.getState()
   const publicPathClean = trim(publicPath, `/`)
+  const outputPath = path.join(program.directory, `public`, publicPathClean)
+  // We don't want to build the cms app if we are publishing manually so,
+  // check for production and the build is already inside static dir.
+  // Push the static build of the cms to the repository to skip deploy building.
+  // Although this will save build times, it requires a manual build and push.
+  const staticBuildPath = path.join(program.directory, `static/${publicPathClean}`, `./cms.js`)
+  if (!developing && fs.existsSync(staticBuildPath)) {
+    reporter.warn(
+      `The cms already exists, so skipping build
+      ${staticBuildPath}`
+    )
+    return Promise.resolve()
+  }
   const config = {
     ...gatsbyConfig,
     entry: {
@@ -119,7 +134,7 @@ exports.onCreateWebpackConfig = (
         .filter(p => p),
     },
     output: {
-      path: path.join(program.directory, `public`, publicPathClean),
+      path: `${outputPath}`,
     },
     module: {
       rules: deepMap(gatsbyConfig.module.rules, replaceRule).filter(Boolean),
