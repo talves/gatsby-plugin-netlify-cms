@@ -1,37 +1,37 @@
-import path from "path"
-import fs from "fs"
-import { mapValues, isPlainObject, trim } from "lodash"
-import webpack from "webpack"
-import HtmlWebpackPlugin from "html-webpack-plugin"
-import HtmlWebpackExcludeAssetsPlugin from "html-webpack-exclude-assets-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import path from 'path';
+import fs from 'fs';
+import { mapValues, isPlainObject, trim } from 'lodash';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackExcludeAssetsPlugin from 'html-webpack-exclude-assets-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // TODO: swap back when https://github.com/geowarin/friendly-errors-webpack-plugin/pull/86 lands
-import FriendlyErrorsPlugin from "friendly-errors-webpack-plugin"
+import FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
 
 // Deep mapping function for plain objects and arrays. Allows any value,
 // including an object or array, to be transformed.
 function deepMap(obj, fn) {
   // If the transform function transforms the value, regardless of type, return
   // the transformed value.
-  const mapped = fn(obj)
+  const mapped = fn(obj);
   if (mapped !== obj) {
-    return mapped
+    return mapped;
   }
 
   // Recursively deep map arrays and plain objects, otherwise return the value.
   if (Array.isArray(obj)) {
-    return obj.map(value => deepMap(value, fn))
+    return obj.map(value => deepMap(value, fn));
   }
   if (isPlainObject(obj)) {
-    return mapValues(obj, value => deepMap(value, fn))
+    return mapValues(obj, value => deepMap(value, fn));
   }
-  return obj
+  return obj;
 }
 
 function replaceRule(value) {
   // If `value` does not have a `test` property, it isn't a rule object.
   if (!value || !value.test) {
-    return value
+    return value;
   }
 
   // remove dependency rule
@@ -42,10 +42,10 @@ function replaceRule(value) {
     value.use[0].options &&
     value.use[0].options.presets &&
     /babel-preset-gatsby[/\\]dependencies\.js/.test(
-      value.use[0].options.presets
+      value.use[0].options.presets,
     )
   ) {
-    return null
+    return null;
   }
 
   // Manually swap `style-loader` for `MiniCssExtractPlugin.loader`.
@@ -58,37 +58,37 @@ function replaceRule(value) {
     return {
       ...value,
       loader: MiniCssExtractPlugin.loader,
-    }
+    };
   }
 
-  return value
+  return value;
 }
 
 exports.onPreInit = ({ reporter }) => {
   try {
-    require.resolve(`netlify-cms`)
+    require.resolve(`netlify-cms`);
     reporter.warn(
-      `The netlify-cms package is deprecated for Gatsby, please install netlify-cms-app and remove netlify-cms. You can do this by running "yarn remove netlify-cms", "yarn add netlify-cms-app"`
-    )
+      `The netlify-cms package is deprecated for Gatsby, please install netlify-cms-app and remove netlify-cms. You can do this by running "yarn remove netlify-cms", "yarn add netlify-cms-app"`,
+    );
   } catch (err) {
     // carry on
   }
-}
+};
 
 exports.onCreateDevServer = ({ app, store }, { publicPath = `admin` }) => {
-  const { program } = store.getState()
-  const publicPathClean = trim(publicPath, `/`)
+  const { program } = store.getState();
+  const publicPathClean = trim(publicPath, `/`);
   app.get(`/${publicPathClean}`, function(req, res) {
     res.sendFile(
       path.join(program.directory, `public`, publicPathClean, `index.html`),
       err => {
         if (err) {
-          res.status(500).end(err.message)
+          res.status(500).end(err.message);
         }
-      }
-    )
-  })
-}
+      },
+    );
+  });
+};
 
 exports.onCreateWebpackConfig = (
   { store, stage, getConfig, plugins, pathPrefix, loaders, reporter },
@@ -100,27 +100,31 @@ exports.onCreateWebpackConfig = (
     htmlFavicon = ``,
     manualInit = false,
     buildCMS = true,
-  }
+  },
 ) => {
-  const developing = stage === `develop`
+  const developing = stage === `develop`;
   if (!buildCMS || ![`develop`, `build-javascript`].includes(stage)) {
-    return Promise.resolve()
+    return Promise.resolve();
   }
-  const gatsbyConfig = getConfig()
-  const { program } = store.getState()
-  const publicPathClean = trim(publicPath, `/`)
-  const outputPath = path.join(program.directory, `public`, publicPathClean)
+  const gatsbyConfig = getConfig();
+  const { program } = store.getState();
+  const publicPathClean = trim(publicPath, `/`);
+  const outputPath = path.join(program.directory, `public`, publicPathClean);
   // We don't want to build the cms app if we are publishing manually so,
   // check for production and the build is already inside static dir.
   // Push the static build of the cms to the repository to skip deploy building.
   // Although this will save build times, it requires a manual build and push.
-  const staticBuildPath = path.join(program.directory, `static/${publicPathClean}`, `./cms.js`)
+  const staticBuildPath = path.join(
+    program.directory,
+    `static/${publicPathClean}`,
+    `./cms.js`,
+  );
   if (!developing && fs.existsSync(staticBuildPath)) {
     reporter.warn(
       `The cms already exists, so skipping build
-      ${staticBuildPath}`
-    )
-    return Promise.resolve()
+      ${staticBuildPath}`,
+    );
+    return Promise.resolve();
   }
   const config = {
     ...gatsbyConfig,
@@ -146,8 +150,8 @@ exports.onCreateWebpackConfig = (
         plugin =>
           ![`MiniCssExtractPlugin`, `GatsbyWebpackStatsExtractor`].find(
             pluginName =>
-              plugin.constructor && plugin.constructor.name === pluginName
-          )
+              plugin.constructor && plugin.constructor.name === pluginName,
+          ),
       ),
 
       /**
@@ -199,20 +203,20 @@ exports.onCreateWebpackConfig = (
       minimizer: stage === `develop` ? [] : gatsbyConfig.optimization.minimizer,
     },
     devtool: stage === `develop` ? `cheap-module-source-map` : `source-map`,
-  }
+  };
 
   return new Promise((resolve, reject) => {
     if (stage === `develop`) {
-      webpack(config).watch({}, () => {})
+      webpack(config).watch({}, () => {});
 
-      return resolve()
+      return resolve();
     }
 
     return webpack(config).run((err, stats) => {
-      if (err) return reject(err)
-      const errors = stats.compilation.errors || []
-      if (errors.length > 0) return reject(stats.compilation.errors)
-      return resolve()
-    })
-  })
-}
+      if (err) return reject(err);
+      const errors = stats.compilation.errors || [];
+      if (errors.length > 0) return reject(stats.compilation.errors);
+      return resolve();
+    });
+  });
+};
